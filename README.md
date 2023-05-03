@@ -40,6 +40,7 @@ Then dataframe for each user was sorted descending, so I could used .head() func
 Best parametes after tuning:
 - n_neg_per_pos = 4
 which gave these results:
+
 | Recommender                     	| HR@1     	| HR@3    	| HR@5     	| HR@10    	| NDCG@1   	| NDCG@3   	| NDCG@5   	| NDCG@10  	|
 |---------------------------------	|----------	|---------	|----------	|----------	|----------	|----------	|----------	|----------	|
 | LinearRegressionCBUIRecommender 	| 0.041073 	| 0.09131 	| 0.145282 	| 0.230143 	| 0.041073 	| 0.070236 	| 0.091918 	| 0.119625 	|
