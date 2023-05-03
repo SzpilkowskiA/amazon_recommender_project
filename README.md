@@ -6,6 +6,14 @@ Index: s464868
 
 *This readme contains only general information about how project was made and what methods were used, for more in-detail information, look inside source code. Everything important is commented.*
 
+# Preparing your computer
+
+1. Install [Anaconda](https://www.anaconda.com/products/individual) with Python 3.8.
+
+2. Install [Git](https://git-scm.com/downloads).
+
+3. Install [PyCharm](https://www.jetbrains.com/pycharm/) (community version).
+
 # Data preparation
 
 Data preparation went as instructed in project_1_data_preparation.ipynb and data_processing/data_preprocessing_toolkit.py
