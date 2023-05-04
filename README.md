@@ -46,7 +46,7 @@ Then dataframe for each user was sorted descending, so I could used .head() func
 
 ### 1. LinearRegressionCBUIRecommender
 Best parametes after tuning:
-- n_neg_per_pos = 4
+- n_neg_per_pos: 4.0
 which gave these results:
 
 | Recommender                     	| HR@1     	| HR@3    	| HR@5     	| HR@10    	| NDCG@1   	| NDCG@3   	| NDCG@5   	| NDCG@10  	|
@@ -57,16 +57,24 @@ which gave these results:
 Did not tune this recommender
 
 ### 3. RandomForestCBUIRecommender
-Did not tune this recommender
+Best parametes after tuning:
+- max_depth: 10.0
+- min_samples_split: 16.0
+- n_estimators: 271.0
+- n_neg_per_pos: 5.0
+
+| Recommender                     	| HR@1     	| HR@3     	| HR@5     	| HR@10    	| NDCG@1   	| NDCG@3   	| NDCG@5   	| NDCG@10  	|
+|---------------------------------	|----------	|----------	|----------	|----------	|----------	|----------	|----------	|----------	|
+| RandomForestCBUIRecommender     	| 0.041752 	| 0.112695 	| 0.162593 	| 0.234895 	| 0.041752 	| 0.082023 	| 0.102636 	| 0.126174 	|
 
 ### 4. XGBoostCBUIRecommender
 Sadly, because of lack of time I did not tuned or tested this recommender.
 
 ## Final evaluation:
-| Recommender                     	| Parameters       	| HR@1     	| HR@3     	| HR@5     	| HR@10    	| NDCG@1   	| NDCG@3   	| NDCG@5   	| NDCG@10  	|
-|---------------------------------	|------------------	|----------	|----------	|----------	|----------	|----------	|----------	|----------	|----------	|
-| LinearRegressionCBUIRecommender 	| n_neg_per_pos: 4 	| 0.041073 	| 0.09131  	| 0.145282 	| 0.230143 	| 0.041073 	| 0.070236 	| 0.091918 	| 0.119625 	|
-| SVRCBUIRecommender              	| base             	| 0.000679 	| 0.004073 	| 0.006789 	| 0.012559 	| 0.000679 	| 0.002732 	| 0.003886 	| 0.005748 	|
-| RandomForestCBUIRecommender     	| base             	| 0.04243  	| 0.07943  	| 0.12797  	| 0.211134 	| 0.04243  	| 0.063997 	| 0.084203 	| 0.111491 	|
-| XGBoostCBUIRecommender          	|                  	|          	|          	|          	|          	|          	|          	|          	|          	|
-| AmazonRecommender               	| base             	| 0.03666  	| 0.09776  	| 0.138493 	| 0.208079 	| 0.03666  	| 0.071565 	| 0.088349 	| 0.110865 	|
+| Recommender                     	| Parameters                                                                                	| HR@1     	| HR@3     	| HR@5     	| HR@10    	| NDCG@1   	| NDCG@3   	| NDCG@5   	| NDCG@10  	|
+|---------------------------------	|-------------------------------------------------------------------------------------------	|----------	|----------	|----------	|----------	|----------	|----------	|----------	|----------	|
+| LinearRegressionCBUIRecommender 	| 'n_neg_per_pos': 4.0                                                                      	| 0.041073 	| 0.09131  	| 0.145282 	| 0.230143 	| 0.041073 	| 0.070236 	| 0.091918 	| 0.119625 	|
+| SVRCBUIRecommender              	|                                                                                           	| 0.000679 	| 0.004073 	| 0.006789 	| 0.012559 	| 0.000679 	| 0.002732 	| 0.003886 	| 0.005748 	|
+| RandomForestCBUIRecommender     	| 'max_depth': 10.0, 'min_samples_split': 16.0, 'n_estimators': 271.0, 'n_neg_per_pos': 5.0 	| 0.041412 	| 0.107264 	| 0.15852  	| 0.22539  	| 0.041412 	| 0.079049 	| 0.100321 	| 0.12248  	|
+| XGBoostCBUIRecommender          	|                                                                                           	|          	|          	|          	|          	|          	|          	|          	|          	|
+| AmazonRecommender               	|                                                                                           	| 0.03666  	| 0.09776  	| 0.138493 	| 0.208079 	| 0.03666  	| 0.071565 	| 0.088349 	| 0.110865 	|
