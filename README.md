@@ -3,7 +3,9 @@ Project for recommending systems class at UAM
 
 Author: Adam Szpilkowski
 Index: s464868
+
 ![meme](meme_sys_rek.jpg)
+
 *This readme contains only general information about how project was made and what methods were used, for more in-detail information, look inside source code. Everything important is commented.*
 
 # Preparing your computer
